@@ -1,11 +1,12 @@
 import './App.css';
 import RegistrationForm from './features/user/components/registerUser';
+import LoginForm from './features/user/components/loginUser';
 import House from './features/House';
 
 function App() {
   return (
     <div className="App">
-      <h1>hello pakistan</h1>
+      <LoginForm />
       <House />
       <RegistrationForm />
     </div>
