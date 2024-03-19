@@ -10,6 +10,7 @@ function House() {
     <div>
       <div>
         <button
+          type="button"
           aria-label="Increment value"
           onClick={() => dispatch(increment())}
         >
@@ -17,6 +18,7 @@ function House() {
         </button>
         <span>{count}</span>
         <button
+          type="button"
           aria-label="Decrement value"
           onClick={() => dispatch(decrement())}
         >
