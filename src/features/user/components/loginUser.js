@@ -29,7 +29,7 @@ const LoginForm = () => {
 
   return (
     <div>
-      <h2>Login Form</h2>
+      <h2>Login</h2>
       <form onSubmit={handleSubmit}>
         <div>
           <label htmlFor="email">
