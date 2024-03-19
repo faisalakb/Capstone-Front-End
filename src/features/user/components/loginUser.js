@@ -13,6 +13,10 @@ const LoginForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(loginUser(formData));
+    setFormData({
+      email: '',
+      password: '',
+    });
   };
 
   const handleChange = (e) => {
