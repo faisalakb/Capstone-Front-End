@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { loginUser } from '../loginUserSlice';
 
 const LoginForm = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -12,7 +15,15 @@ const LoginForm = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser(formData));
+    dispatch(loginUser(formData))
+      .then(() => {
+        // Redirect to dashboard after successful login
+        navigate('/dashboard');
+      })
+      .catch((error) => {
+        // Handle login error
+        console.error('Login failed:', error);
+      });
     setFormData({
       email: '',
       password: '',

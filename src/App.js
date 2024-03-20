@@ -1,15 +1,17 @@
 import './App.css';
-import RegistrationForm from './features/user/components/registerUser';
-import LoginForm from './features/user/components/loginUser';
-import House from './features/House';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './features/home/home';
+import Dashboard from './features/home/dashboard';
 
 function App() {
   return (
-    <div className="App">
-      <LoginForm />
-      <House />
-      <RegistrationForm />
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
