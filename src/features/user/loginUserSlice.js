@@ -23,7 +23,9 @@ export const loginUser = createAsyncThunk(
       }
 
       const data = await response.json();
-      return data;
+      const token = response.headers.get('Authorization').split(' ')[1]; // Extract token from header
+
+      return { data, token };
     } catch (error) {
       return rejectWithValue(error.message);
     }
@@ -38,6 +40,8 @@ const loginUserSlice = createSlice({
       state.user = null;
       state.status = 'idle';
       state.error = null;
+      state.token = null;
+      localStorage.removeItem('token');
     },
   },
   extraReducers: (builder) => {
@@ -48,10 +52,14 @@ const loginUserSlice = createSlice({
       .addCase(loginUser.fulfilled, (state, action) => {
         state.status = 'succeeded';
         state.user = action.payload;
+        state.token = action.payload.token;
+        localStorage.setItem('token', action.payload.token);
       })
       .addCase(loginUser.rejected, (state, action) => {
         state.status = 'failed';
         state.error = action.payload;
+        state.token = null;
+        localStorage.removeItem('token');
       });
   },
 });
