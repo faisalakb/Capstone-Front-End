@@ -17,7 +17,7 @@ export const logoutUser = createAsyncThunk(
       const response = await fetch(baseUrl, {
         method: 'DELETE',
         headers: {
-          Authorization: `bearer ${token}`, // Replace token with the actual token
+          Authorization: `bearer ${token}`,
         },
       });
 

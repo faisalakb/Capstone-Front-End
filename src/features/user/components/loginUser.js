@@ -22,6 +22,7 @@ const LoginForm = () => {
       })
       .catch((error) => {
         // Handle login error
+        // eslint-disable-next-line no-console
         console.error('Login failed:', error);
       });
     setFormData({

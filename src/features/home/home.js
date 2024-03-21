@@ -6,7 +6,7 @@ import RegistrationForm from '../user/components/registerUser';
 
 const Home = () => (
   <div>
-    <h1>Welcome to the Home component!</h1>
+    <h1>Welcome to Rent a house</h1>
     <div>
       <nav>
         <Link to="/login">Login</Link>
