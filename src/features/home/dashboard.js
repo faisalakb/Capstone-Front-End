@@ -16,6 +16,19 @@ const Dashboard = () => {
 
   return (
     <div>
+      <nav>
+        <ul>
+          <li>
+            <a href="/">Home</a>
+          </li>
+          <li>
+            <a href="/dashboard">Dashboard</a>
+          </li>
+          <li>
+            <a href="/favorites">Favorites</a>
+          </li>
+        </ul>
+      </nav>
       <h1>Dashboard</h1>
       <button type="button" onClick={handleLogout}>Logout</button>
       <CreateHouseForm />

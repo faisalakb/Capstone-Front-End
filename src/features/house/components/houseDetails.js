@@ -3,6 +3,7 @@ import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllHouses } from '../getHousesSlice';
 import { deleteHouse } from '../deleteHouseSlice'; // Import the deleteHouse action
+import { addFavorite } from '../../favorite/addFavoriteSlice'; // Import the addFavorite action
 
 const HouseDetails = () => {
   const dispatch = useDispatch();
@@ -37,11 +38,21 @@ const HouseDetails = () => {
     try {
       // Dispatch the deleteHouse action with the house id
       await dispatch(deleteHouse(house.id));
-      // Navigate to dashboard after successful deletion
       navigate('/dashboard');
     } catch (error) {
       // eslint-disable-next-line no-console
       console.error('Failed to delete house:', error);
+    }
+  };
+
+  // Handler for add to favorites button click
+  const handleAddToFavorites = async () => {
+    try {
+      // Dispatch the addFavorite action with the house id
+      await dispatch(addFavorite(house.id));
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Failed to add house to favorites:', error);
     }
   };
 
@@ -52,7 +63,7 @@ const HouseDetails = () => {
       <img src={house.photo} alt={house.title} />
       <button type="button" onClick={handleDelete}>Delete</button>
       <p>{house.description}</p>
-      <button type="button">Add to favorites</button>
+      <button type="button" onClick={handleAddToFavorites}>Add to favorites</button>
     </div>
   );
 };

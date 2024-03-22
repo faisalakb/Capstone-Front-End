@@ -4,6 +4,7 @@ import { postHouse } from '../features/house/postHouseSlice';
 import registerReducer from '../features/user/registrationSlice';
 import loginUserReducer from '../features/user/loginUserSlice';
 import { deleteHouse } from '../features/house/deleteHouseSlice';
+import { addFavorite } from '../features/favorite/addFavoriteSlice';
 
 const store = configureStore({
   reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
     renderHouses: renderHousesReducer,
     postHouse,
     deleteHouse,
+    addFavorite,
   },
 });
 
