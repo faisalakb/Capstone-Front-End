@@ -44,12 +44,16 @@ const renderHousesSlice = createSlice({
     // Fetch all houses pending
     builder.addCase(fetchAllHouses.pending, (state) => {
       state.status = 'loading';
+      state.error = null;
     });
     // Fetch all houses fulfilled
     builder.addCase(fetchAllHouses.fulfilled, (state, action) => {
       state.status = 'succeeded';
       state.houses = action.payload;
       state.error = null;
+
+      // eslint-disable-next-line no-console
+      console.log('Fetched favorites:', action.payload);
     });
     // Fetch all houses rejected
     builder.addCase(fetchAllHouses.rejected, (state, action) => {
