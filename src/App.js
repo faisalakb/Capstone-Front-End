@@ -1,12 +1,17 @@
 import './App.css';
-import House from './features/House'
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Home from './features/home/home';
+import Dashboard from './features/home/dashboard';
 
 function App() {
   return (
-    <div className="App">
-    <h1>hello pakistan</h1>
-    <House/>
-    </div>
+    <BrowserRouter>
+      <Routes>
+        <Route path="*" element={<Home />} />
+        <Route path="/dashboard" element={<Dashboard />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 

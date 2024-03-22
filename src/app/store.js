@@ -1,8 +1,14 @@
-import { configureStore } from '@reduxjs/toolkit'
-import counterReducer from '../features/houseSlice'
+import { configureStore } from '@reduxjs/toolkit';
+import renderHousesReducer from '../features/house/getHousesSlice';
+import registerReducer from '../features/user/registrationSlice';
+import loginUserReducer from '../features/user/loginUserSlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
-    counter: counterReducer,
+    register: registerReducer,
+    loginUser: loginUserReducer,
+    renderHouses: renderHousesReducer,
   },
-})
+});
+
+export default store;
