@@ -1,21 +1,18 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-import { Link, Route, Routes } from 'react-router-dom';
-import LoginForm from '../user/components/loginUser';
-import RegistrationForm from '../user/components/registerUser';
+import { Link } from 'react-router-dom';
 
 const Home = () => (
-  <div>
-    <h1>Welcome to Rent a house</h1>
-    <div>
-      <nav>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+  <div className="mt-[36vh] text-center">
+    <h1 className="text-primary text-5xl font-semibold">
+      Welcome to
+      <br />
+      <span className="text-black leading-8"> Rent a house</span>
+    </h1>
+    <div className="mt-12">
+      <nav className="flex flex-col items-center">
+        <Link to="/login" className="p-2 bg-primary w-48 rounded-xl text-white text-xl">Login</Link>
+        <Link to="/register" className="text-xl mt-5">Register</Link>
       </nav>
-      <Routes>
-        <Route path="/login" element={<LoginForm />} />
-        <Route path="/register" element={<RegistrationForm />} />
-      </Routes>
     </div>
   </div>
 );

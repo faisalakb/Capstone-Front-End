@@ -3,7 +3,6 @@ import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '../user/loginUserSlice';
 import HouseList from '../house/components/Houses';
-import CreateHouseForm from '../house/components/addHouseForm';
 
 const Dashboard = () => {
   const dispatch = useDispatch();
@@ -19,20 +18,23 @@ const Dashboard = () => {
       <nav>
         <ul>
           <li>
-            <a href="/">Home</a>
+            <a href="/">Houses</a>
           </li>
           <li>
-            <a href="/dashboard">Dashboard</a>
+            <a href="/add">Add house</a>
           </li>
           <li>
-            <a href="/favorites">Favorites</a>
+            <a href="/delete">Delete a house</a>
+          </li>
+          <li>
+            <a href="/favorites">My Favorites</a>
           </li>
         </ul>
+        <button type="button" onClick={handleLogout}>
+          Logout
+        </button>
       </nav>
       <h1>Dashboard</h1>
-      <button type="button" onClick={handleLogout}>Logout</button>
-      <CreateHouseForm />
-      <hr />
       <HouseList />
     </div>
   );
