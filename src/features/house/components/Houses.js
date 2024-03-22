@@ -29,14 +29,13 @@ const HouseList = () => {
   return (
     <div className="house-list">
       {houses.map((house) => (
-        <Link key={house.id} to={`/houses/${house.id}`} className="house-card-link">
+        <Link key={house.id} to={`/house/${house.id}`} className="house-card-link">
           <div className="house-card">
             <div className="house-photo">
               <img src={house.photo} alt={house.title} />
             </div>
             <div className="house-details">
               <h2>{house.title}</h2>
-              <p>{house.description}</p>
             </div>
           </div>
         </Link>

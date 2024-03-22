@@ -9,9 +9,9 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="*" element={<Home />} />
         <Route path="/dashboard" element={<Dashboard />} />
         <Route path="/house/:id" element={<HouseDetails />} />
+        <Route path="*" exact element={<Home />} />
       </Routes>
     </BrowserRouter>
   );
