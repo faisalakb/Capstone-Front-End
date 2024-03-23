@@ -32,6 +32,7 @@ const DeleteHouse = () => {
       await dispatch(deleteHouse(id));
       window.location.reload();
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error('Failed to delete house:', error);
     }
   };

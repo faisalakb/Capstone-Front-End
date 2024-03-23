@@ -27,19 +27,21 @@ const HouseList = () => {
   }
 
   return (
-    <div className="house-list">
-      {houses.map((house) => (
-        <Link key={house.id} to={`/house/${house.id}`} className="house-card-link">
-          <div className="house-card">
-            <div className="house-photo">
-              <img src={house.photo} alt={house.title} />
+    <div className="house-list pt-6 pb-4 px-2 w-[90vw] rounded-lg mx-auto overflow-x-auto scroll-smooth scrollbar-none">
+      <div className="flex scroll-smooth">
+        {houses.map((house) => (
+          <Link key={house.id} to={`/house/${house.id}`} className="house-card-link shrink-0">
+            <div className="rounded-[8px] m-2 overflow-hidden w-[75vw] h-[55vh] shadow-lg">
+              <div className="photo">
+                <img className="h-[45vh] w-full" src={house.photo} alt={house.title} />
+              </div>
+              <div className="house-details p-2 font-semibold">
+                <h2>{house.title}</h2>
+              </div>
             </div>
-            <div className="house-details">
-              <h2>{house.title}</h2>
-            </div>
-          </div>
-        </Link>
-      ))}
+          </Link>
+        ))}
+      </div>
     </div>
   );
 };
