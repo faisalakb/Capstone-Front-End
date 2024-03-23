@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { logoutUser } from '../user/loginUserSlice';
+import More from './more';
 import HouseList from '../house/components/Houses';
 import Hamburger from '../../assets/menu.png';
 import CloseButton from '../../assets/close.png';
@@ -10,7 +11,8 @@ const Dashboard = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = React.useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isNavbarSticky, setIsNavbarSticky] = useState(false);
 
   const handleLogout = () => {
     dispatch(logoutUser());
@@ -24,6 +26,21 @@ const Dashboard = () => {
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
   };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.pageYOffset > 0) {
+        setIsNavbarSticky(true);
+      } else {
+        setIsNavbarSticky(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
 
   return (
     <div className="static flex flex-col h-screen items-center">
@@ -59,6 +76,25 @@ const Dashboard = () => {
           Logout
         </button>
       </nav>
+
+      {/* Mobile navbar (toggles on smaller screens) */}
+      <div
+        className={`lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
+          isNavbarSticky ? 'bg-white shadow-md' : 'bg-transparent'
+        }`}
+      >
+        <div className="flex items-center justify-between px-4 py-2">
+          <button
+            type="button"
+            onClick={toggleMobileMenu}
+            className={`${isMobileMenuOpen ? 'hidden' : ''}`}
+          >
+            <img src={Hamburger} alt="Open Menu" className="w-8 h-8" />
+          </button>
+          <h2 className="text-2xl">Houses</h2>
+          <div className="w-8 h-8" />
+        </div>
+      </div>
 
       {/* Mobile menu (toggles on smaller screens) */}
       <div
@@ -97,21 +133,11 @@ const Dashboard = () => {
         </ul>
       </div>
 
-      {/* Hamburger menu button (on smaller screens) */}
-      <button
-        type="button"
-        onClick={toggleMobileMenu}
-        className={`lg:hidden fixed top-4 left-4 ${
-          isMobileMenuOpen ? 'hidden' : ''
-        }`}
-      >
-        <img src={Hamburger} alt="Open Menu" className="w-8 h-8" />
-      </button>
-
-      <h2 className="lg:hidden absolute top-3 text-2xl">Houses</h2>
-
-      <div className="flex-grow px-4 py-4 mt-10">
+      <div className="px-4 py-4 mt-20">
         <HouseList />
+      </div>
+      <div className="flex-grow px-4 mt-2 py-4 bg-[#e7f0ff] w-screen">
+        <More />
       </div>
     </div>
   );
