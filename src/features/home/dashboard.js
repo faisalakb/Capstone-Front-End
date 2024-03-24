@@ -133,7 +133,7 @@ const Dashboard = () => {
         </ul>
       </div>
 
-      <div className="px-4 py-4 mt-20">
+      <div className="py-4 mt-20 w-full">
         <HouseList />
       </div>
       <div className="flex-grow px-4 mt-2 py-4 bg-[#e7f0ff] w-screen">

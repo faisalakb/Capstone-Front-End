@@ -28,7 +28,7 @@ const HouseList = () => {
   }
 
   return (
-    <div className="house-list pt-6 pb-3 px-2 w-[90vw] rounded-lg mx-auto overflow-x-auto scroll-smooth scrollbar-none">
+    <div className="w-full house-list pt-6 pb-3 pl-4 rounded-lg overflow-x-auto scroll-smooth scrollbar-none">
       <div className="flex scroll-smooth">
         {houses.map((house) => (
           <Link key={house.id} to={`/house/${house.id}`} className="house-card-link shrink-0">
