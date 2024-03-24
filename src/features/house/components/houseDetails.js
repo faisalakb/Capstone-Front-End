@@ -1,13 +1,11 @@
 import React, { useEffect } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllHouses } from '../getHousesSlice';
-import { deleteHouse } from '../deleteHouseSlice'; // Import the deleteHouse action
 import { addFavorite } from '../../favorite/addFavoriteSlice'; // Import the addFavorite action
 
 const HouseDetails = () => {
   const dispatch = useDispatch();
-  const navigate = useNavigate(); // Use useNavigate hook
   const { id } = useParams(); // Get the id from route params
   const { status, houses, error } = useSelector((state) => state.renderHouses);
 
@@ -33,18 +31,6 @@ const HouseDetails = () => {
   // Find the house with the matching id
   const house = houses.find((house) => house.id === parseInt(id, 10));
 
-  // Handler for delete button click
-  const handleDelete = async () => {
-    try {
-      // Dispatch the deleteHouse action with the house id
-      await dispatch(deleteHouse(house.id));
-      navigate('/dashboard');
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error('Failed to delete house:', error);
-    }
-  };
-
   // Handler for add to favorites button click
   const handleAddToFavorites = async () => {
     try {
@@ -57,13 +43,14 @@ const HouseDetails = () => {
   };
 
   return (
-    <div className="house-details-fullscreen">
-      <Link to="/dashboard">Back to all houses</Link>
-      <h2>{house.title}</h2>
-      <img src={house.photo} alt={house.title} />
-      <button type="button" onClick={handleDelete}>Delete</button>
-      <p>{house.description}</p>
-      <button type="button" onClick={handleAddToFavorites}>Add to favorites</button>
+    <div className="static flex flex-col h-screen w-screen bg-secondary pt-4">
+      <Link to="/dashboard" className="m-4 w-[33.5vw] bg-slate-800 text-white rounded-lg p-2">Back to all houses</Link>
+      <div className="flex-grow h-full w-full pt-4">
+        <img className="h-[60vh]" src={house.photo} alt={house.title} />
+        <h2 className="text-center font-medium pt-4">{house.title}</h2>
+        <p className="text-slate-500 p-2">{house.description}</p>
+        <button className="bg-primary text-center text-white w-full font-semibold p-4 absolute bottom-0" type="button" onClick={handleAddToFavorites}>Add to favorites</button>
+      </div>
     </div>
   );
 };
