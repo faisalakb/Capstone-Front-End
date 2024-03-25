@@ -26,7 +26,7 @@ const Favorites = () => {
       <h1 className="w-full text-center text-3xl font-semibold pt-2">Favorites</h1>
       <ul className="mt-4 flex-grow overflow-y-scroll pb-6">
         {favorites.map((favorite) => (
-          <li key={favorite.id} className="flex items-center bg-secondary rounded-md justify-between mx-2 p-2 pr-16">
+          <li key={favorite.id} className="flex items-center mt-2 bg-secondary rounded-md justify-between mx-2 p-2 pr-16">
             <img className="h-[20vw] w-[20vw] rounded-lg" src={favorite.photo} alt={favorite.title} />
             <h2 className="text-xl">{favorite.title}</h2>
           </li>
