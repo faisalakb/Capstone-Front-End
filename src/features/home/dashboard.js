@@ -44,7 +44,6 @@ const Dashboard = () => {
 
   return (
     <div className="static flex flex-col h-screen items-center">
-      {/* Navigation bar (desktop view) */}
       <nav className="hidden lg:flex bg-gray-800 text-white px-4 py-2">
         <ul className="flex space-x-4">
           <li>
@@ -77,7 +76,6 @@ const Dashboard = () => {
         </button>
       </nav>
 
-      {/* Mobile navbar (toggles on smaller screens) */}
       <div
         className={`lg:hidden fixed top-0 left-0 w-full z-50 transition-all duration-300 ${
           isNavbarSticky ? 'bg-white shadow-md' : 'bg-transparent'
@@ -96,7 +94,6 @@ const Dashboard = () => {
         </div>
       </div>
 
-      {/* Mobile menu (toggles on smaller screens) */}
       <div
         className={`lg:hidden fixed top-0 left-0 h-screen z-50 overflow-auto bg-white shadow-lg ${
           isMobileMenuOpen ? 'w-1/2' : 'w-0'
@@ -109,7 +106,7 @@ const Dashboard = () => {
         >
           <img src={CloseButton} alt="Close Menu" className="w-8 h-8" />
         </button>
-        <ul className="p-4">
+        <ul className="p-4 mt-11 flex flex-col gap-2 text-lg">
           <li>
             <a href="/dashboard" className="hover:text-gray-400 block mb-2">
               Houses
@@ -131,6 +128,13 @@ const Dashboard = () => {
             </a>
           </li>
         </ul>
+        <button
+          type="button"
+          onClick={handleLogout}
+          className="ml-4 absolute bottom-4 border-t-[3px] w-full pt-2 text-black hover:text-gray-400"
+        >
+          Logout
+        </button>
       </div>
 
       <div className="py-4 mt-20 w-full">
