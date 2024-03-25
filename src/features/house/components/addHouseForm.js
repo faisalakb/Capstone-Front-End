@@ -1,10 +1,7 @@
 import React, { useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux'; // Importing useSelector
-import { postHouse } from '../postHouseSlice';
+import axios from 'axios'; // Import Axios
 
 const CreateHouseForm = () => {
-  const dispatch = useDispatch();
-  const { token } = useSelector((state) => state.loginUser); // Accessing token from Redux state
   const [formData, setFormData] = useState({
     title: '',
     description: '',
@@ -19,15 +16,29 @@ const CreateHouseForm = () => {
     });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    dispatch(postHouse({ houseData: formData, token })); // Passing formData and token to postHouse
-    // Reset form data after submission
-    setFormData({
-      title: '',
-      description: '',
-      photo: '',
-    });
+    try {
+      // Retrieve the token from localStorage or wherever you're storing it
+      const token = localStorage.getItem('token');
+
+      // Make the POST request using Axios
+      await axios.post('http://localhost:3001/houses', { house: formData }, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
+
+      // Reset form data after successful submission
+      setFormData({
+        title: '',
+        description: '',
+        photo: '',
+      });
+    } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error('Error posting house:', error);
+    }
   };
 
   return (
