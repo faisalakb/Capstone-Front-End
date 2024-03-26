@@ -44,8 +44,8 @@ const Dashboard = () => {
 
   return (
     <div className="static flex flex-col h-screen items-center">
-      <nav className="hidden lg:flex bg-gray-800 text-white px-4 py-2">
-        <ul className="flex space-x-4">
+      <nav className="hidden lg:flex w-screen items-center h-[16vh] hover:text-gray-800 bg-white px-4 py-2 shadow-lg sticky top-0">
+        <ul className="flex items-center text-xl h-full space-x-4">
           <li>
             <a href="/dashboard" className="hover:text-gray-400">
               Houses
@@ -70,7 +70,7 @@ const Dashboard = () => {
         <button
           type="button"
           onClick={handleLogout}
-          className="ml-auto text-white hover:text-gray-400"
+          className="ml-auto bg-rose-400 text-white rounded-lg p-2 hover:bg-gray-400"
         >
           Logout
         </button>

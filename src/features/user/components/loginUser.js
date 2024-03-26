@@ -42,8 +42,8 @@ const LoginForm = () => {
 
   return (
     <div className="static flex flex-col items-center justify-center h-screen text-center">
-      <div className="absolute top-2 left-0 p-2">
-        <a href="/"><img src={backImage} alt="back" className="w-12 h-12 pt-3" /></a>
+      <div className="absolute top-2 left-0 p-2 lg:hidden">
+        <a href="/"><img src={backImage} alt="back" className="w-12 h-12 pt-3 lg:hidden md:hidden" /></a>
       </div>
       <div className="w-[70vw] h-1/6">
         <h2 className="text-4xl mb-4">Sign in</h2>

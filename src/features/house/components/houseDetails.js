@@ -43,13 +43,19 @@ const HouseDetails = () => {
   };
 
   return (
-    <div className="static flex flex-col h-screen w-screen bg-secondary pt-4">
-      <Link to="/dashboard" className="m-4 w-[33.5vw] bg-slate-800 text-white rounded-lg p-2">Back to all houses</Link>
-      <div className="flex-grow h-full w-full pt-4">
-        <img className="h-[60vh]" src={house.photo} alt={house.title} />
-        <h2 className="text-center font-medium pt-4">{house.title}</h2>
-        <p className="text-slate-500 p-2">{house.description}</p>
-        <button className="bg-primary text-center text-white w-full font-semibold p-4 absolute bottom-0" type="button" onClick={handleAddToFavorites}>Add to favorites</button>
+    <div className="static flex flex-col h-screen w-screen bg-secondary pt-4 lg:justify-center lg:items-center">
+      <Link to="/dashboard" className="m-4 w-[33.5vw] bg-slate-800 text-white rounded-lg p-2 md:hidden">Back to all houses</Link>
+      <div className="flex-grow h-full w-full pt-4 lg:pt-0 lg:flex-grow-0 lg:flex lg:w-[80vw] lg:items-center lg:bg-white lg:h-[60vh]  lg:rounded-2xl overflow-hidden lg:shadow-2xl">
+        <img className="h-[60vh] lg:w-[50vw]" src={house.photo} alt={house.title} />
+        <div className="lg:flex lg:flex-col lg:h-[60vh] lg:justify-between lg:p-4 lg:pl-6">
+          <div>
+            <h2 className="text-center font-medium pt-4 lg:text-left">{house.title}</h2>
+            <p className="text-slate-500 p-2 lg:p-0">{house.description}</p>
+          </div>
+          <button className="bg-primary text-center text-white w-full font-semibold p-4 absolute bottom-0 left-0 right-0 lg:static lg:w-auto" type="button" onClick={handleAddToFavorites}>
+            Add to favorites
+          </button>
+        </div>
       </div>
     </div>
   );

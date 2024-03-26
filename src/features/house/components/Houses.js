@@ -32,7 +32,7 @@ const HouseList = () => {
       <div className="flex scroll-smooth">
         {houses.map((house) => (
           <Link key={house.id} to={`/house/${house.id}`} className="house-card-link shrink-0">
-            <div className="rounded-[8px] m-2 overflow-hidden w-[75vw] h-[55vh] shadow-lg relative">
+            <div className="rounded-[8px] m-2 overflow-hidden w-[75vw] h-[55vh] shadow-lg relative lg:w-[28vw]">
               <img className="absolute right-2 bottom-8 w-8 h-8" src={Dots} alt="dots" />
               <div className="photo">
                 <img className="h-[45vh] w-full" src={house.photo} alt={house.title} />
