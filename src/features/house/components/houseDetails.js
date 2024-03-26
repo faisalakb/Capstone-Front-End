@@ -2,11 +2,11 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchAllHouses } from '../getHousesSlice';
-import { addFavorite } from '../../favorite/addFavoriteSlice'; // Import the addFavorite action
+import { addFavorite } from '../../favorite/addFavoriteSlice';
 
 const HouseDetails = () => {
   const dispatch = useDispatch();
-  const { id } = useParams(); // Get the id from route params
+  const { id } = useParams();
   const { status, houses, error } = useSelector((state) => state.renderHouses);
 
   useEffect(() => {

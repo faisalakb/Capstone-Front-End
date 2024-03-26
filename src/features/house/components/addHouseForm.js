@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import axios from 'axios'; // Import Axios
+import axios from 'axios';
 
 const CreateHouseForm = () => {
   const [formData, setFormData] = useState({
@@ -19,17 +19,14 @@ const CreateHouseForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      // Retrieve the token from localStorage or wherever you're storing it
       const token = localStorage.getItem('token');
 
-      // Make the POST request using Axios
       await axios.post('http://localhost:3001/houses', { house: formData }, {
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
 
-      // Reset form data after successful submission
       setFormData({
         title: '',
         description: '',
