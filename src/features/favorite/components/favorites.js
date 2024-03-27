@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 
 const Favorites = () => {
@@ -22,16 +21,20 @@ const Favorites = () => {
   }, [token]);
 
   return (
-    <div>
-      <h1>Favorites</h1>
-      <ul>
+    <div className="static h-screen flex-col">
+      <h1 className="w-full text-center text-3xl font-semibold pt-2">Favorites</h1>
+      <ul className="mt-4 flex-grow overflow-y-scroll pb-6">
         {favorites.map((favorite) => (
-          <li key={favorite.id}>
-            <h2>{favorite.title}</h2>
-            <p>{favorite.description}</p>
+          <li key={favorite.id} className="flex items-center mt-2 bg-secondary rounded-md justify-between mx-2 p-2 pr-16">
+            <img className="h-[20vw] w-[20vw] rounded-lg" src={favorite.photo} alt={favorite.title} />
+            <h2 className="text-xl">{favorite.title}</h2>
           </li>
         ))}
       </ul>
+      <div className="text-center text-xl absolute bottom-2 w-full">
+        Back to
+        <a href="/dashboard" className="text-primary"> dashboard</a>
+      </div>
     </div>
   );
 };

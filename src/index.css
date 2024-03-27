@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 body {
   margin: 0;
   font-family:
@@ -24,4 +28,17 @@ code {
     Consolas,
     'Courier New',
     monospace;
+}
+
+.house-list {
+  -ms-overflow-style: none; /* Hide scrollbar for Internet Explorer and Edge */
+  scrollbar-width: none; /* Hide scrollbar for Firefox */
+}
+
+.house-list::-webkit-scrollbar {
+  display: none; /* Hide scrollbar for Chrome, Safari and Opera */
+}
+
+.house-list > div {
+  scroll-behavior: smooth; /* Add smooth scrolling behavior */
 }

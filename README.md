@@ -19,6 +19,14 @@ You may also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+## :busts_in_silhouette: Authors <a name="authors"></a>
+
+:bust_in_silhouette: **Faisal Mumtaz**
+
+- GitHub: [@faisalakb](https://github.com/faisalakb)
+- Twitter: [@faisalakb786](https://twitter.com/Faisalakb786)
+- LinkedIn: [LinkedIn](https://www.linkedin.com/in/faisal-mumtaz-514a221a6/)
+
 ### `npm run build`
 
 Builds the app for production to the `build` folder.\
