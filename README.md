@@ -1,25 +1,119 @@
-# Getting Started with Create React App
+<a name="readme-top"></a>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# 📗 _Table of Contents_
 
-## Available Scripts
+- [📖 About the Project](#about-project)
+  - [🛠️ Built With](#built-with)
+    - [Tech Stack](#tech-stack)
+    - [Key Features](#key-features)
+  - [🚀 Live Demo](#live-demo)
+- [💻 Getting Started](#getting-started)
+  - [Prerequisites](#prerequisites)
+  - [Setup](#setup)
+  - [Install](#install)
+  - [Database](#database)
+  - [Usage](#usage)
+  - [Run tests](#run-tests)
+- [👥 Authors](#authors)
+- [🔭 Future Features](#future-features)
+- [🤝 Contributing](#contributing)
+- [⭐ Show your support](#support)
+- [🙏 Acknowledgements](#acknowledgements)
+- [📝 License](#license)
 
-In the project directory, you can run:
+# Budget App <a name="about-project"></a>
 
-### `npm start`
+Front End App is an Rent House app that allows user to create new house; the user can see a list of houses. When the user selects a specific item, they can see the details page with its full description. In the details page, the user can click the "Add to favourite" button (in the design you can see the "Apply to rent" button - please replace it with the "Add to favouties" button).
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## :hammer_and_wrench: Built With <a name="built-with"></a>
 
-### `npm test`
+### Tech Stack
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<details><summary>Client</summary>
+<ul>
+  <li><a href="https://html.com/">HTML</a></li>
+  <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS">CSS</a></li>
+</ul>
+</details>
+<details><summary>Frontend</summary>
+<ul>
+  <li><a href='https://react.dev/'>React</a></li>
+</ul>
+</details>
+<details><summary>BootStrap</summary>
+  <ul>
+    <li><a href="https://getbootstrap.com/">BootStrap</a></li>
+  </ul>
+</details>
+
+### Key Features
+
+- Rent a House
+- Associate a house with a category
+- Create new house
+- View favourite house
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+
+
+## :computer: Getting Started <a name="getting-started"></a>
+
+To get a local copy up and running, follow these steps.<br>
+
+### Prerequisites
+
+You need the following tools be installed in your computer:
+
+- [Rails](https://guides.rubyonrails.org/)
+- [Git](https://www.linode.com/docs/guides/how-to-install-git-on-linux-mac-and-windows/)
+- [Ruby](https://github.com/microverseinc/curriculum-ruby/blob/main/simple-ruby/articles/ruby_installation_instructions.md)
+- IDE
+
+### Setup
+
+Clone this repository to your desired folder:<br>
+
+```sh
+  cd my-prefered-folder
+
+  git clone https://github.com/faisalakb/Capstone-Front-End
+
+### Install
+
+Install this project with:<br>
+
+```sh
+  cd Front-End App
+
+  bundle install
+```
+
+### Usage
+
+To run the project, execute the following command:
+
+```sh
+  npm start
+
+  Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+
+### Run tests
+
+To run tests, run the following command:
+
+```sh
+  rspec spec/
+```
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 ## :busts_in_silhouette: Authors <a name="authors"></a>
+
+:bust_in_silhouette: **Ochieng Steven**
+
+- GitHub: [@Ochiengsteven](https://github.com/Ochiengsteven)
 
 :bust_in_silhouette: **Faisal Mumtaz**
 
@@ -27,52 +121,45 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 - Twitter: [@faisalakb786](https://twitter.com/Faisalakb786)
 - LinkedIn: [LinkedIn](https://www.linkedin.com/in/faisal-mumtaz-514a221a6/)
 
-### `npm run build`
+:bust_in_silhouette: **Ahmad**
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- GitHub: [@newtonah0](https://github.com/newtonah0)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### `npm run eject`
+## :telescope: Future Features <a name="future-features"></a>
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- Record Avilable houses list
+- Add more house options
+- View favorites
+- Improve styling
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## :handshake: Contributing <a name="contributing"></a>
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Contributions, issues, and feature requests are welcome!
+Feel free to check the [issues page](https://github.com/faisalakb/Capstone-Front-End/issues).
 
-## Learn More
+<!-- Feel free to check the [issues page](../../issues/). -->
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :star: Show your support <a name="support"></a>
 
-### Code Splitting
+If you like this project give it a star.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-### Analyzing the Bundle Size
+## :pray: Acknowledgements <a name="acknowledgements"></a>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+- Thanks to Alexey Savitskiy for the UI/UX design.
+- Thanks to my coding partners for their support
 
-### Making a Progressive Web App
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+  
+## :memo: License <a name="license"></a>
+This project is [MIT](https://github.com/faisalakb/Capstone-Front-End/blob/dev/LICENSE) licensed.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
