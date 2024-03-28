@@ -87,7 +87,7 @@ Install this project with:<br>
 ```sh
   cd Front-End App
 
-  bundle install
+  npm install
 ```
 
 ### Usage
@@ -96,16 +96,9 @@ To run the project, execute the following command:
 
 ```sh
   npm start
-
+```
   Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### Run tests
-
-To run tests, run the following command:
-
-```sh
-  rspec spec/
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
